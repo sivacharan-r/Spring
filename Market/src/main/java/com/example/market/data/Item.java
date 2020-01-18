@@ -4,12 +4,15 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Fruit {
+public class Item {
 
 	@Id
 	private int id;
 	private String name;
+	private String category;
+	private int quantity;
 	
+
 	public int getId() {
 		return id;
 	}
@@ -21,5 +24,19 @@ public class Fruit {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 }
