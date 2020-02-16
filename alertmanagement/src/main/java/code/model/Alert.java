@@ -1,14 +1,25 @@
 package code.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Alert {
+	
+@Id	
  private int id;
  private String name;
- private String flight;
+ @ManyToOne
+ @JoinColumn(name="flight")
+ private Flight flight;
+ 
 public int getId() {
 	return id;
+}
+public void setFlight(Flight flight) {
+	this.flight = flight;
 }
 public void setId(int id) {
 	this.id = id;
@@ -19,11 +30,4 @@ public String getName() {
 public void setName(String name) {
 	this.name = name;
 }
-public String getFlight() {
-	return flight;
-}
-public void setFlight(String flight) {
-	this.flight = flight;
-}
- 
 }
